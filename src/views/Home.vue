@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NotesList v-if="notes.length>0" :notes="notes"/>
+      <div v-else>It is empty. <router-link to="/new">Create your first note</router-link></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NotesList from '@/components/NotesList.vue'
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
+    NotesList
+  },
+  computed: {
+    notes(){
+      return this.$store.getters.notes
+    }
   }
 }
 </script>

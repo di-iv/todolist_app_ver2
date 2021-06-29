@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">List of notes</router-link>
+      <router-link to="/new">New note</router-link>
     </div>
     <router-view/>
   </div>
@@ -10,11 +10,9 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans HK', sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #34322a;
 }
 
 #nav {
@@ -22,10 +20,12 @@
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #aaaaaa;
+    text-decoration: none;
+    margin: 0 10px;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #34322a;
     }
   }
 }
