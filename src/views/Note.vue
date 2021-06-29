@@ -83,11 +83,6 @@ export default {
             return typeof this.note.description
         }
     },
-    watch: {
-        isModalVisible: function(){
-            console.log(this.isModalVisible)
-        }
-    },
     methods:{
         toggleTodo(index){
             this.$store.dispatch('updateToggle', {noteIndex: this.noteIndex, todoIndex: index})
@@ -104,11 +99,8 @@ export default {
             this.newDescription = this.note.description
             this.editingDescription = true
             this.$nextTick(() => {
-                console.log(this.$refs.desc)
-                console.log(this.$refs.desc.scrollHeight)
-                console.log(this.$refs.desc.scrollTop)
                 this.$refs.desc.style.height = (this.$refs.desc.scrollHeight - 12) + 'px'
-                });
+            });
         },
         updateTodo(index){
             if (this.note.description.[index].editing == true){
@@ -125,7 +117,6 @@ export default {
         },
         addNewTodo(){
             let newTodo = {text: '', completed: false, editing: false}
-            console.log('add new todo')
             this.$store.dispatch('addNewTodo', {noteIndex: this.noteIndex, newTodo: newTodo})
         },
         deleteNote(){

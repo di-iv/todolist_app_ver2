@@ -29,10 +29,6 @@
         typeOfNote: 'todos'
       }
     },
-    mounted(){
-      let a =new Date()
-      console.log(a)
-    },
     methods: {
       addNote(){
         if(this.typeOfNote == 'todos'){
